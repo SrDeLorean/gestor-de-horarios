@@ -32,6 +32,3 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::view('tables', 'tables')->name('tables');
     Route::view('calendar', 'calendar')->name('calendar');
 });
-
-Route::get('/admin_dashboard', 'Admin\DashboardController@index');
-Route::get('/user_dashboard', 'User\DashboardController@index');
