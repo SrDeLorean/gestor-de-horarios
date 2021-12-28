@@ -24,6 +24,11 @@
     <script src="{{asset('js/charts-pie.js')}}" defer></script>
     <script src="{{asset('js/charts-bars.js')}}" defer></script>
 
+    <!-- Con esto funciona el datepicker -->
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
     @livewireStyles
     <script>
         import Turbolinks from 'turbolinks';
