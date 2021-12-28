@@ -3,9 +3,19 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\AdminDashboardController;
-use App\Http\Controllers\User\UserDashboardController;
 use App\Http\Controllers\Attendant\AttendantDashboardController;
 
+
+//Controladores de usuario "user"
+use App\Http\Controllers\User\UserDashboardController;
+use App\Http\Controllers\User\AgendaController;
+use App\Http\Controllers\User\CirculoController;
+use App\Http\Controllers\User\FicheroController;
+use App\Http\Controllers\User\MensajeController;
+use App\Http\Controllers\User\NoticiaController;
+use App\Http\Controllers\User\PartidoController;
+use App\Http\Controllers\User\ReservaController;
+use App\Http\Controllers\User\SaldoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,8 +48,19 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'role:attendant']], f
 
 Route::group(['middleware' => ['auth:sanctum', 'verified', 'role:user']], function () {
     Route::get('dashboard', [UserDashboardController::class, 'index'])->name('user_dashboard');
+    Route::get('agenda', [AgendaController::class, 'index'])->name('user_agenda');
+    Route::get('circulo', [CirculoController::class, 'index'])->name('user_circulo');
+    Route::get('partido', [PartidoController::class, 'index'])->name('user_partido');
+    Route::get('reserva', [ReservaController::class, 'index'])->name('user_reserva');
+    Route::get('saldo', [SaldoController::class, 'index'])->name('user_saldo');
+    Route::get('fichero', [FicheroController::class, 'index'])->name('user_fichero');
+    Route::get('mensaje', [MensajeController::class, 'index'])->name('user_mensaje');
+    Route::get('noticia', [NoticiaController::class, 'index'])->name('user_noticia');
+    Route::view('calendar', 'calendar')->name('calendar');
     
 });
+
+
 
 /**
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
